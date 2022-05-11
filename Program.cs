@@ -11,7 +11,7 @@ namespace Labas_2
             int a = Convert.ToInt32(Console.ReadLine());
             Block1.doBlock1();
            
-            else if (a == 2)
+            if (a == 2)
             {
                 int[][] arr = GenerateJuggedArray(4, 4);
                 int[][] newArr = new int[arr.Length][];
