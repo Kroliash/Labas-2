@@ -8,12 +8,18 @@ namespace Labas_2
     {
         public static void doBlock3()
         {
-            int[][] arr = PrintArrays.GenerateJuggedArray(4, 4);
+            Console.Clear();
+            Console.WriteLine("Enter the number of lines");
+            int lines = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the number of colunms");
+            int colunms = int.Parse(Console.ReadLine());
+            Console.Clear();
+            int[][] arr = PrintArrays.GenerateJuggedArray(lines, colunms);
             int[][] newArr = new int[arr.Length][];
             PrintArrays.PrintJuggedArray(arr);
             int min = FindMin(arr);
             int count = 0;
-            Console.WriteLine(min);
+            Console.WriteLine("The minimal number is {0}",min);
             for (int i = 0; i < arr.Length; i++)
             {
                 if (!NeedToDelete(arr[i], min))
@@ -24,6 +30,7 @@ namespace Labas_2
             }
             Array.Resize(ref newArr, count);
             Console.WriteLine("////////////////");
+            Console.WriteLine("Here is ur array:");
             PrintArrays.PrintJuggedArray(newArr);
 
         }
